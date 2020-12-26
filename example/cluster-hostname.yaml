@@ -5,6 +5,7 @@ services:
     container_name: nacos1
     image: nacos/nacos-server:latest
     volumes:
+        #官方例子中是基于mysql5.6的，现在改为mysql8需要加入最新的驱动。
       - ./plugins/mysql/:/home/nacos/plugins/mysql/
       - ./cluster-logs/nacos1:/home/nacos/logs
       - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
@@ -22,6 +23,7 @@ services:
     image: nacos/nacos-server:latest
     container_name: nacos2
     volumes:
+      #官方例子中是基于mysql5.6的，现在改为mysql8需要加入最新的驱动。
       - ./plugins/mysql/:/home/nacos/plugins/mysql/
       - ./cluster-logs/nacos2:/home/nacos/logs
       - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
@@ -37,6 +39,7 @@ services:
     image: nacos/nacos-server:latest
     container_name: nacos3
     volumes:
+       #官方例子中是基于mysql5.6的，现在改为mysql8需要加入最新的驱动。
       - ./plugins/mysql/:/home/nacos/plugins/mysql/
       - ./cluster-logs/nacos3:/home/nacos/logs
       - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
